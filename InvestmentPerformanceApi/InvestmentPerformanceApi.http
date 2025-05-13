@@ -1,6 +1,0 @@
-@InvestmentPerformanceApi_HostAddress = http://localhost:5034
-
-GET {{InvestmentPerformanceApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
