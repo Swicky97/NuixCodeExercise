@@ -2,9 +2,9 @@ using InvestmentPerformanceApi.Models;
 
 namespace InvestmentPerformanceApi.Repos;
 
-public static class InvestmentRepository
+public class InvestmentRepository
 {
-    private static readonly List<Investment> _investments = new()
+    private readonly List<Investment> _investments = new()
     {
         new Investment { Id = 1, Name = "Apple", UserId = 1, Shares = 10, CostBasisPerShare = 150, CurrentPrice = 170, PurchaseDate = DateTime.UtcNow.AddMonths(-14) },
         new Investment { Id = 2, Name = "Google", UserId = 1, Shares = 5, CostBasisPerShare = 1200, CurrentPrice = 1400, PurchaseDate = DateTime.UtcNow.AddMonths(-10) },
@@ -18,6 +18,6 @@ public static class InvestmentRepository
         new Investment { Id = 10, Name = "Google", UserId = 3, Shares = 10000, CostBasisPerShare = 1200, CurrentPrice = 1400, PurchaseDate = DateTime.UtcNow.AddYears(-3) },
     };
 
-    public static IEnumerable<Investment> GetByUserId(int userId) => _investments.Where(i => i.UserId == userId);
-    public static Investment? GetById(int userId, int investmentId) => _investments.FirstOrDefault(i => i.UserId == userId && i.Id == investmentId);
+    public IEnumerable<Investment> GetByUserId(int userId) => _investments.Where(i => i.UserId == userId);
+    public Investment? GetById(int userId, int investmentId) => _investments.FirstOrDefault(i => i.UserId == userId && i.Id == investmentId);
 }
