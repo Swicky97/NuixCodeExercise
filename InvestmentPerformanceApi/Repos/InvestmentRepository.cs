@@ -2,7 +2,7 @@ using InvestmentPerformanceApi.Models;
 
 namespace InvestmentPerformanceApi.Repos;
 
-public class InvestmentRepository
+public class InvestmentRepository : IInvestmentRepository
 {
     private readonly List<Investment> _investments = new()
     {

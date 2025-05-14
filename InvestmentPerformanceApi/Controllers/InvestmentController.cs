@@ -1,14 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
 using InvestmentPerformanceApi.Repos;
 
+namespace InvestmentPerformanceApi.Controllers;
+
 [ApiController]
 [Route("api/users/{userId}/investments")]
 public class InvestmentController : ControllerBase
 {
-    private readonly InvestmentRepository _repository;
+    private readonly IInvestmentRepository _repository;
     private readonly ILogger<InvestmentController> _logger;
 
-    public InvestmentController(InvestmentRepository repository, ILogger<InvestmentController> logger)
+    public InvestmentController(IInvestmentRepository repository, ILogger<InvestmentController> logger)
     {
         _repository = repository;
         _logger = logger;
